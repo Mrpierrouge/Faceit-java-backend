@@ -38,4 +38,8 @@ public class MatchController {
     public Match getMatchById(@PathVariable int id) {
         return matchService.getById(id);
     }
+    @DeleteMapping("/{id}/delete")
+    public List<Match> deleteMatch(@PathVariable Integer id){
+        return matchService.deleteMatch(id);
+    }
 }

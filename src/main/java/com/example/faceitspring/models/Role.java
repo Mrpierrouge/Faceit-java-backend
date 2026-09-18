@@ -8,7 +8,7 @@ public enum Role {
     TANK, DPS, SUPPORT;
 
     private static final Map<String, Role> RoleFromString = Map.of(
-            "Tank", TANK,
+            "TANK", TANK,
             "DPS", DPS,
             "SUPPORT", SUPPORT
     );

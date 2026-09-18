@@ -58,9 +58,13 @@ public class Team {
     }
     public void syncAverageElo() {
         int totalElo = 0;
+        if (players == null || players.isEmpty()) {
+            this.averageElo = 0;
+            return;
+        }
 
         for (Player player : players) {
-            totalElo += player.elo;
+            totalElo += player.getElo();
         }
 
         this.averageElo = totalElo / players.size();

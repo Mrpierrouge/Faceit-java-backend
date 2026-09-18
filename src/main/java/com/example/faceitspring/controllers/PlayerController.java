@@ -52,4 +52,9 @@ public class PlayerController {
     public Player getPlayerById(@PathVariable int id){
         return playerService.getById(id);
     }
+
+    @DeleteMapping("/{id}/delete")
+    public List<Player> deletePlayer(@PathVariable Integer id){
+        return playerService.delete(id);
+    }
 }

@@ -62,9 +62,12 @@ public class Player {
     }
 
     public int updateElo(boolean positive, int eloB) {
-        var difference = 1 / (1 + 10^((eloB - this.elo) / 400));
-        var newElo = this.elo + 16 * (positive ? 1 : 0) - difference;
-
+        double expected = 1.0 / (1.0 + Math.pow(10.0, (eloB - this.elo) / 400.0));
+        int score = positive ? 1 : 0;
+        int K = 16;
+        int newElo = (int) Math.round(this.elo + K * (score - expected));
+        this.elo = newElo;
+        this.level = Level.getLevel(this.elo);
         return newElo;
     }
 }
