@@ -1,0 +1,25 @@
+services:
+
+  postgres:
+    image: postgres:18
+    container_name: faceit-postgres
+    environment:
+      POSTGRES_DB: &dbname faceit
+      POSTGRES_USER: &dbuser main
+      POSTGRES_PASSWORD: &dbpassword main
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+  faceit:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/faceit
+      DB_NAME: *dbname
+      DB_USER: *dbuser
+      DB_PASSWORD: *dbpassword
+
+volumes:
+  postgres_data:
