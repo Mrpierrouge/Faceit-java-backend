@@ -1,0 +1,344 @@
+{
+  "info": {
+    "_postman_id": "1631f4cf-4885-402f-a43f-4b529dc9b055",
+    "name": "Faceit",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33050559"
+  },
+  "item": [
+    {
+      "name": "match",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/match",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "match"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getByid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/match/3",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "match",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"team1\": 1,\r\n    \"team2\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/match/create",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "match",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "play",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "1",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/match/3/play",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "match",
+                "3",
+                "play"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "player",
+      "item": [
+        {
+          "name": "getAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/player",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "player"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getByID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/player/1",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "player",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"Bouboulboumb\",\r\n    \"role\": \"TANK\",\r\n    \"inGameRank\": \"MASTER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/player/create",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "player",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "joinTeam",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "2",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/player/2/team/join",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "player",
+                "2",
+                "team",
+                "join"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "leaveTeam",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/player/1/team/leave",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "player",
+                "1",
+                "team",
+                "leave"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "CHAMPION",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/player/1/resetelo",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "player",
+                "1",
+                "resetelo"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "team",
+      "item": [
+        {
+          "name": "getByID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/team/1",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "team",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tortue\",\r\n    \"playerId\": 4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/team/create",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "team",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAll",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/team",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "team"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/team/{1}/delete",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "team",
+                "{1}",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
