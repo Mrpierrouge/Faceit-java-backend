@@ -20,13 +20,23 @@ public class WebSecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) {
 		// @formatter:off
-		http
-			.csrf((csrf) -> csrf.disable())
-			.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/", "/home", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-				.anyRequest().authenticated()
-			)
-			.httpBasic(Customizer.withDefaults());
+			http
+				.csrf((csrf) -> csrf.disable())
+				.authorizeHttpRequests((requests) -> requests
+					.requestMatchers(
+						"/",
+						"/home",
+						"/v3/api-docs/**",
+						"/swagger-ui/**",
+						"/swagger-ui.html",
+						"/webjars/**",
+						"/swagger-resources/**",
+						"/configuration/**",
+						"/favicon.ico"
+					).permitAll()
+					.anyRequest().authenticated()
+				)
+				.httpBasic(Customizer.withDefaults());
 		// @formatter:on
 
 		return http.build();
